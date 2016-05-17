@@ -459,7 +459,7 @@ public class mainGUI extends javax.swing.JFrame implements PropertyChangeListene
             labelExcelFile.setText(java.text.MessageFormat.format(java.util.ResourceBundle.getBundle("de_DE").getString("File kann geladen werden"), new Object[]{excelFile.getType().name()}));
         } else {
             labelExcelFile.setText(java.util.ResourceBundle.getBundle("de_DE").getString("FILE KANN NICHT GELADEN WERDEN. BITTE ANDERES WÄHLEN."));
-            importFileLoaded = false; 
+            importFileLoaded = false;
         }
 
         updateActiveStatusForExportButton();
