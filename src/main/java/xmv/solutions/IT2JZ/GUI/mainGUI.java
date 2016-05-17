@@ -127,7 +127,7 @@ public class mainGUI extends javax.swing.JFrame implements PropertyChangeListene
         jLabelHeadline.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("de_DE"); // NOI18N
         jLabelHeadline.setText(bundle.getString("ZEPHYR TESTFALL IMPORTER")); // NOI18N
-        jLabelHeadline.setToolTipText("");
+        jLabelHeadline.setToolTipText("null");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -150,7 +150,7 @@ public class mainGUI extends javax.swing.JFrame implements PropertyChangeListene
         jLabel4.setText("2. In Jira Anmelden und im Zephyr-Menü \"Tests\" den Punkt \"Create a Test\" öffnen");
 
         buttonCheckTestCreatePage.setText(bundle.getString("CHECK TEST CREATE PAGE")); // NOI18N
-        buttonCheckTestCreatePage.setToolTipText("");
+        buttonCheckTestCreatePage.setToolTipText("null");
         buttonCheckTestCreatePage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonCheckTestCreatePageActionPerformed(evt);
@@ -180,10 +180,10 @@ public class mainGUI extends javax.swing.JFrame implements PropertyChangeListene
         });
 
         jLabel6.setText(bundle.getString("TEST STEP")); // NOI18N
-        jLabel6.setToolTipText("");
+        jLabel6.setToolTipText("null");
 
         jLabel7.setText(bundle.getString("TEST DATA")); // NOI18N
-        jLabel7.setToolTipText("");
+        jLabel7.setToolTipText("null");
 
         inputStepData.setText("$E");
         inputStepData.setToolTipText("");
@@ -270,9 +270,7 @@ public class mainGUI extends javax.swing.JFrame implements PropertyChangeListene
                         .addGap(12, 12, 12))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jSeparator1)
-                                .addGap(0, 0, 0))
+                            .addComponent(jSeparator1)
                             .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -293,13 +291,12 @@ public class mainGUI extends javax.swing.JFrame implements PropertyChangeListene
                                 .addGap(18, 18, 18)
                                 .addComponent(labelTestCreatePageResult))
                             .addComponent(jButtonOpenBrowser)
-                            .addComponent(jLabel9))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(buttonExport)
-                        .addGap(18, 18, 18)
-                        .addComponent(labelExport)
-                        .addGap(0, 0, 0))))
+                            .addComponent(jLabel9)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(buttonExport)
+                                .addGap(18, 18, 18)
+                                .addComponent(labelExport)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -460,7 +457,7 @@ public class mainGUI extends javax.swing.JFrame implements PropertyChangeListene
         } else {
             labelExcelFile.setText(java.util.ResourceBundle.getBundle("de_DE").getString("FILE KANN NICHT GELADEN WERDEN. BITTE ANDERES WÄHLEN."));
             importFileLoaded = false;
-        }
+        }  
 
         updateActiveStatusForExportButton();
         updateActiveStatusForLoadButton();
