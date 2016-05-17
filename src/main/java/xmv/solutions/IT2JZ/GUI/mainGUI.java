@@ -449,19 +449,19 @@ public class mainGUI extends javax.swing.JFrame implements PropertyChangeListene
         }
 
         importFileLoadable = (excelFile != null && excelFile.testExcelFile());
-        updateActiveStatusForLoadButton();
 
         if (importFileLoadable) {
             settings.setProperty(
                     Settings.Keys.ExcelFilePath.name(),
                     new File(excelFile.getPath()).getParent());
             settings.store();
-            
+
             labelExcelFile.setText(java.text.MessageFormat.format(java.util.ResourceBundle.getBundle("de_DE").getString("File kann geladen werden"), new Object[]{excelFile.getType().name()}));
         } else {
             labelExcelFile.setText(java.util.ResourceBundle.getBundle("de_DE").getString("FILE KANN NICHT GELADEN WERDEN. BITTE ANDERES WÄHLEN."));
+            importFileLoaded = false; 
         }
-        
+
         updateActiveStatusForExportButton();
         updateActiveStatusForLoadButton();
     }//GEN-LAST:event_buttonSelectFileActionPerformed
@@ -543,14 +543,13 @@ public class mainGUI extends javax.swing.JFrame implements PropertyChangeListene
         } else {
             buttonExport.setEnabled(true);
         }
-
     }
 
     private boolean importFileLoadable = false;
 
     private void updateActiveStatusForLoadButton() {
         buttonLoad.setEnabled(importFileLoadable);
-        if(!importFileLoadable) {
+        if (!importFileLoadable) {
             labelLoad.setText("");
         }
     }
