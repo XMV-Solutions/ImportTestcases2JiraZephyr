@@ -5,6 +5,7 @@
  */
 package xmv.solutions.IT2JZ.GUI;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
@@ -37,7 +38,11 @@ public class Settings extends java.util.Properties {
     /**
      * Path to the settings File
      */
-    private static final String SETTINGS_PATH = ".IT2JZ.properties";
+    private static final String SETTINGS_PATH = 
+            new File(
+                     System.getProperty("java.io.tmpdir"),
+                    ".IT2JZ.properties"
+            ).getAbsolutePath();
 
     /**
      * Singelton Delivery of Settings Instance
@@ -67,7 +72,7 @@ public class Settings extends java.util.Properties {
      * Stores changed properties
      */
     public void store() {
-
+            
         try (FileOutputStream fos = new FileOutputStream(SETTINGS_PATH)){
             super.storeToXML(
                     fos, 
